@@ -30,3 +30,40 @@ CREATE TABLE User (
     address TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE Buses (
+    bus_id INT PRIMARY KEY,
+    operator_id INT,
+    bus_name VARCHAR(100),
+    bus_number VARCHAR(20) UNIQUE,
+    bus_type ENUM('Sleeper AC', 'Sleeper Non-AC', 'Seating AC', 'Seating Non-AC'),
+    number_of_seats INT,
+    origin VARCHAR(100),
+    destination VARCHAR(100),
+    departure_time TIME,
+    arrival_time TIME,
+    fare DECIMAL(10, 2),
+    FOREIGN KEY (operator_id) REFERENCES BusOperator(operator_id)
+);
+
+CREATE TABLE Booking (
+    booking_id INT PRIMARY KEY AUTO_INCREMENT,
+    user_id INT,
+    bus_id INT,
+    booking_date DATE,
+    journey_date DATE,
+    total_amount DECIMAL(10, 2),
+    booking_status ENUM('Booked', 'Cancelled', 'Completed') DEFAULT 'Booked',
+    FOREIGN KEY (user_id) REFERENCES User(user_id),
+    FOREIGN KEY (bus_id) REFERENCES Buses(bus_id)
+);
+
+CREATE TABLE Payment (
+    payment_id INT PRIMARY KEY AUTO_INCREMENT,
+    booking_id INT,
+    amount DECIMAL(10, 2),
+    payment_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    payment_status ENUM('Pending', 'Completed', 'Refunded'),
+    FOREIGN KEY (booking_id) REFERENCES Booking(booking_id)
+);
+
