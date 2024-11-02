@@ -30,7 +30,6 @@ CREATE TABLE Buses (
     operator_id INT,
     bus_name VARCHAR(100),
     bus_number VARCHAR(20) UNIQUE,
-    bus_type ENUM('Sleeper AC', 'Sleeper Non-AC', 'Seating AC', 'Seating Non-AC'),
     number_of_seats INT,
     origin VARCHAR(100),
     destination VARCHAR(100),
