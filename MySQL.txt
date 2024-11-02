@@ -2,32 +2,26 @@ CREATE DATABASE BusTicketBookingSystem;
 
 CREATE TABLE Admin (
     admin_id INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(50) UNIQUE NOT NULL,
-    password VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(100) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE BusOperator (
     operator_id INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(50) UNIQUE NOT NULL,
-    password VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(100) NOT NULL,
     name VARCHAR(100),
     contact_number VARCHAR(15),
-    address TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 CREATE TABLE User (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
-    username VARCHAR(50) UNIQUE NOT NULL,
-    password VARCHAR(100) NOT NULL,
     email VARCHAR(100) UNIQUE NOT NULL,
+    password VARCHAR(100) NOT NULL,
     name VARCHAR(100),
-    gender ENUM('Male', 'Female', 'Other'),
     contact_number VARCHAR(15),
-    address TEXT,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
@@ -41,7 +35,6 @@ CREATE TABLE Buses (
     origin VARCHAR(100),
     destination VARCHAR(100),
     departure_time TIME,
-    arrival_time TIME,
     fare DECIMAL(10, 2),
     FOREIGN KEY (operator_id) REFERENCES BusOperator(operator_id)
 );
