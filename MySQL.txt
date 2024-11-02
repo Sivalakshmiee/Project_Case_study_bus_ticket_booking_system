@@ -22,7 +22,6 @@ CREATE TABLE User (
     email VARCHAR(100) UNIQUE NOT NULL,
     password VARCHAR(100) NOT NULL,
     name VARCHAR(100),
-    gender ENUM('Male', 'Female', 'Other'),
     contact_number VARCHAR(15),
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
