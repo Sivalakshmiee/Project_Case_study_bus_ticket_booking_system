@@ -42,6 +42,12 @@ public class Admin {
 	public void setCreatedAt(Timestamp createdAt) {
 		this.createdAt = createdAt;
 	}
+	@Override
+	public String toString() {
+		return "Admin [adminId=" + adminId + ", email=" + email + ", password=" + password + ", createdAt=" + createdAt
+				+ "]";
+	}
+	
     
     
 

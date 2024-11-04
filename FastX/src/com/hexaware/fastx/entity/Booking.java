@@ -67,6 +67,13 @@ public class Booking {
 	public void setBookingStatus(String bookingStatus) {
 		this.bookingStatus = bookingStatus;
 	}
+	@Override
+	public String toString() {
+		return "Booking [bookingId=" + bookingId + ", userId=" + userId + ", busId=" + busId + ", bookingDate="
+				+ bookingDate + ", journeyDate=" + journeyDate + ", totalAmount=" + totalAmount + ", bookingStatus="
+				+ bookingStatus + "]";
+	}
+	
     
 
 }

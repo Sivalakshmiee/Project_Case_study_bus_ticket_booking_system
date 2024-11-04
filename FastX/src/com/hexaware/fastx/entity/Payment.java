@@ -50,6 +50,12 @@ public class Payment {
 	public void setPaymentStatus(String paymentStatus) {
 		this.paymentStatus = paymentStatus;
 	}
+	@Override
+	public String toString() {
+		return "Payment [paymentId=" + paymentId + ", bookingId=" + bookingId + ", amount=" + amount + ", paymentDate="
+				+ paymentDate + ", paymentStatus=" + paymentStatus + "]";
+	}
+	
     
     
 
