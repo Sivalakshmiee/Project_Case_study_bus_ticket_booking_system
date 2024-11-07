@@ -14,7 +14,7 @@ public class BusOperateService implements IBusOperatorService {
 
 	@Override
 	public int deleteBusOperate(BusOperator Busoperator) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stu
 		return 0;
 	}
 
