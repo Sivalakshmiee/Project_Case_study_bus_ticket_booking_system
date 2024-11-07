@@ -1,15 +1,15 @@
 package com.hexaware.fastx.entity;
 
-public class BussOpreator {
+public class BusOperator {
 	private int operatorId;
     private String email;
     private String password;
     private String operatorName;
     private String contactNumber;
-	public BussOpreator() {
+	public BusOperator() {
 		super();
 	}
-	public BussOpreator(int operatorId, String email, String password, String operatorName, String contactNumber) {
+	public BusOperator(int operatorId, String email, String password, String operatorName, String contactNumber) {
 		super();
 		this.operatorId = operatorId;
 		this.email = email;
