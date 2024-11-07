@@ -1,22 +1,18 @@
 package com.hexaware.fastx.entity;
 
-import java.sql.Timestamp;
-
 public class Admin {
 	
 	private int adminId;
     private String email;
     private String password;
-    private Timestamp createdAt;
 	public Admin() {
 		super();
 	}
-	public Admin(int adminId, String email, String password, Timestamp createdAt) {
+	public Admin(int adminId, String email, String password) {
 		super();
 		this.adminId = adminId;
 		this.email = email;
 		this.password = password;
-		this.createdAt = createdAt;
 	}
 	public int getAdminId() {
 		return adminId;
@@ -36,12 +32,7 @@ public class Admin {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-	public Timestamp getCreatedAt() {
-		return createdAt;
-	}
-	public void setCreatedAt(Timestamp createdAt) {
-		this.createdAt = createdAt;
-	}
+	
     
     
 
